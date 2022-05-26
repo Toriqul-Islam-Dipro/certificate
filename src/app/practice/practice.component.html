@@ -1,67 +1,49 @@
+<!--<i>ngClass Example<-->
+<!--<div class="container mt-5">-->
+<!--  <div class="row">-->
+<!--    <div class="col-md-6">-->
+<!--      <div class="card">-->
+<!--        <div class="card-body bg-danger">-->
+<!--          <div class="text py-3" [ngClass]="{fadeOut: closeNotification}">-->
+<!--            <h1 class="text-center">You are learning ngClass directive!</h1>-->
+<!--            <button class="btn btn-sm text-end" (click)="onCloseNotification()" >X</button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
 <div class="container container-fluid">
-  <h1>Add New Servers or Blueprints</h1>
 
 
-  <div class="row">
-    <div class="col-md-6">
+<div>
+  <app-search></app-search>
+  <app-filter></app-filter>
+</div>
 
+<div class="course-container mt-5" *ngFor="let course of courses">
+  <div class="course-card">
+    <div class="image">
+      <img [src]="course.image" style="width: 220px; height: 140px">
+    </div>
+    <div class="course-name text-center mt-2">
+      <h4>{{course.name}}</h4>
+    </div>
+    <div class="course-description">
+      <p>{{course.description.slice(0, 80)}}...</p>
+    </div>
 
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label fw-bold">Server Name</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Test Server">
-        </div>
-
-        <div class="mb-3">
-          <label for="exampleFormControlInput2" class="form-label fw-bold">Server Content</label>
-          <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Some Content">
-        </div>
-
-        <button (click)="addServer()" class="btn btn-primary me-3">Add Server</button>
-        <button (click)="addBlueServer()" class="btn btn-success">Add Server Blueprint</button>
-
-
-    </div>   <!-- col-md-6-->
-
-
-    <div class="col-md-6">
-      <h4>Server List</h4>
-      <hr>
-
-
-      <div class="row">
-        <div class="col">
-          <div class="card" *ngFor="let element of serverElement">
-            <div class="card-header fw-bold my-3">
-              {{element.name}}
-            </div><!-- header-->
-            <div class="card-body">
-              <h3 *ngIf="element.type === 'server'" style="color: red">{{element.content}}</h3>
-              <h3 *ngIf="element.type === 'serverBlue'" style="color: green">{{element.content}}</h3>
-            </div><!-- body-->
-          </div><!-- card-->
-        </div><!-- col-->
-      </div><!-- row-->
-
-
-<!--      <div class="row m-4" *ngIf="serverBlue">-->
-<!--        <div class="col">-->
-<!--          <div class="card" *ngFor="let element of serverElement">-->
-<!--            <div class="card-header fw-bold">-->
-<!--              {{element.name}}-->
-<!--            </div>&lt;!&ndash; header&ndash;&gt;-->
-<!--            <div class="card-body">-->
-<!--              <h3 class="text-success">{{element.content}}</h3>-->
-<!--            </div>&lt;!&ndash; body&ndash;&gt;-->
-<!--          </div>&lt;!&ndash; card&ndash;&gt;-->
-<!--        </div>&lt;!&ndash; col&ndash;&gt;-->
-<!--      </div>&lt;!&ndash; row&ndash;&gt;-->
-    </div>   <!-- col-md-6-->
-  </div><!-- row-->
+    <div class="course-details">
+      <div class="course-type text-center" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}" >{{course.type}}</div>
+      <div class="course-price"><b>Price:</b> ${{course.price}}</div>
+    </div>
+    <div class="couse-button">
+<button class="btn btn-danger mx-2">Buy Now</button>
+<button class="btn btn-success">Show Details</button>
+    </div>
+  </div>
+</div>
 
 
 </div>
-<!-- container-fluid-->
-
-
-
-

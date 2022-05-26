@@ -1,0 +1,33 @@
+.fadeOut{
+  visibility: hidden;
+opacity: 0;
+transition: visibility 0s 1s,
+opacity 2s linear;
+}
+
+.course-container{
+  display: inline-flex;
+}
+
+
+.course-card {
+  width: 240px;
+  height: 320px;
+  margin: 10px 10px;
+  background-color: #F8F9F9;
+}
+
+.course-description {
+  margin: 10px 0px;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.details{
+  display: flex;
+  margin: 10px 0px;
+}
+
+.course-button {
+  display: flex;
+}
