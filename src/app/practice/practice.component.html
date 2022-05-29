@@ -17,33 +17,41 @@
 <div class="container container-fluid">
 
 
-<div>
-  <app-search></app-search>
-  <app-filter></app-filter>
-</div>
+  <div>
+    <app-search></app-search>
+    <app-filter
+      [all]="getTotalCourses()"
+      [free]="getTotalFreeCourses()"
+      [premium]="getTotalPremiumCourses()"
+      (filterRadioButtonSelectionChanged)="onFilterRadioButtonChanged($event)"
+    ></app-filter>
+  </div>
 
-<div class="course-container mt-5" *ngFor="let course of courses">
-  <div class="course-card">
-    <div class="image">
-      <img [src]="course.image" style="width: 220px; height: 140px">
-    </div>
-    <div class="course-name text-center mt-2">
-      <h4>{{course.name}}</h4>
-    </div>
-    <div class="course-description">
-      <p>{{course.description.slice(0, 80)}}...</p>
-    </div>
+  <ng-container *ngFor="let course of courses">
 
-    <div class="course-details">
-      <div class="course-type text-center" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}" >{{course.type}}</div>
-      <div class="course-price"><b>Price:</b> ${{course.price}}</div>
-    </div>
-    <div class="couse-button">
-<button class="btn btn-danger mx-2">Buy Now</button>
-<button class="btn btn-success">Show Details</button>
+
+  <div class="course-container mt-5" *ngIf="courseCountRadioButton ==='All' || courseCountRadioButton === course.type">
+    <div class="course-card">
+      <div class="image">
+        <img [src]="course.image" style="width: 220px; height: 140px">
+      </div>
+      <div class="course-name text-center mt-2">
+        <h4>{{course.name}}</h4>
+      </div>
+      <div class="course-description">
+        <p>{{course.description.slice(0, 80)}}...</p>
+      </div>
+
+      <div class="course-details">
+        <div class="course-type text-center" [ngStyle]="{color: course.type === 'Free' ? 'Green' : 'Red'}" >{{course.type}}</div>
+        <div class="course-price"><b>Price:</b> ${{course.price}}</div>
+      </div>
+      <div class="couse-button">
+        <button class="btn btn-danger mx-2">Buy Now</button>
+        <button class="btn btn-success">Show Details</button>
+      </div>
     </div>
   </div>
-</div>
 
-
+  </ng-container>
 </div>

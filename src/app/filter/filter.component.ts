@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 @Component({
   selector: 'app-filter',
@@ -12,9 +12,16 @@ export class FilterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  all: number = 10;
-  free: number = 6;
-  premium: number = 4;
+ @Input() all: number = 0;
+ @Input() free: number = 0;
+ @Input() premium: number = 0;
 
+ selectedRadioButton: string = 'All'
+
+ @Output() filterRadioButtonSelectionChanged: EventEmitter<string> = new EventEmitter<string>()
+
+  onRadioButtonChange(){
+   this.filterRadioButtonSelectionChanged.emit(this.selectedRadioButton);
+  }
 
 }

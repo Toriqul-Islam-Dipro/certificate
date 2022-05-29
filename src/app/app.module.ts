@@ -9,6 +9,8 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
+import {FormsModule} from "@angular/forms";
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FilterComponent } from './filter/filter.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
