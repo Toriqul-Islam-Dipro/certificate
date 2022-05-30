@@ -10,6 +10,11 @@ import { ServerElementComponent } from './server-element/server-element.componen
 import { SearchComponent } from './search/search.component';
 import { FilterComponent } from './filter/filter.component';
 import {FormsModule} from "@angular/forms";
+import { DemoComponent } from './demo/demo.component';
+import { CustomerComponent } from './customer/customer.component';
+import { ViewChieldComponent } from './view-chield/view-chield.component';
+import { NgContentComponent } from './ng-content/ng-content.component';
+import { ProductComponent } from './product/product.component';
 
 
 @NgModule({
@@ -19,7 +24,12 @@ import {FormsModule} from "@angular/forms";
     CockpitComponent,
     ServerElementComponent,
     SearchComponent,
-    FilterComponent
+    FilterComponent,
+    DemoComponent,
+    CustomerComponent,
+    ViewChieldComponent,
+    NgContentComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
