@@ -18,7 +18,8 @@
 
 
   <div>
-    <app-search></app-search>
+    <app-search (searchTextChanged)="onSearchTextEntered($event)"></app-search>
+
     <app-filter
       [all]="getTotalCourses()"
       [free]="getTotalFreeCourses()"
@@ -29,8 +30,10 @@
 
   <ng-container *ngFor="let course of courses">
 
+<!--for radio filter-->
+<!--    *ngIf="courseCountRadioButton ==='All' || courseCountRadioButton === course.type"-->
 
-  <div class="course-container mt-5" *ngIf="courseCountRadioButton ==='All' || courseCountRadioButton === course.type">
+  <div class="course-container mt-5" *ngIf="searchText === '' || course.name.toLowerCase().includes(searchText)">
     <div class="course-card">
       <div class="image">
         <img [src]="course.image" style="width: 220px; height: 140px">
@@ -52,6 +55,5 @@
       </div>
     </div>
   </div>
-
   </ng-container>
 </div>

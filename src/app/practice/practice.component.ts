@@ -50,6 +50,7 @@ closeNotification: boolean = false;
     return this.courses.filter(course => course.type === 'Premium').length;
   }
 
+  // radio button filter
   courseCountRadioButton: string = 'All'
 
   onFilterRadioButtonChanged (data: string) {
@@ -58,5 +59,15 @@ closeNotification: boolean = false;
   }
 
 
+
+  // search functionality
+
+
+  searchText: string = '';
+
+  onSearchTextEntered (searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText)
+  }
 
 }
