@@ -15,6 +15,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { ViewChieldComponent } from './view-chield/view-chield.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { ProductComponent } from './product/product.component';
+import { StudentBookProblemComponent } from './student-book-problem/student-book-problem.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { ProductComponent } from './product/product.component';
     CustomerComponent,
     ViewChieldComponent,
     NgContentComponent,
-    ProductComponent
+    ProductComponent,
+    StudentBookProblemComponent
   ],
   imports: [
     BrowserModule,
