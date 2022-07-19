@@ -60,7 +60,7 @@ export class StudentBookProblemComponent implements OnInit {
   findStudentBookList (studentList: Array<Student>, bookList: Array<Book>) {
     for(let i=0; i < studentList.length; i++) {
       for(let j=0; j < bookList.length; j++ ){
-        let tempArray:Array<Book> = []
+        let tempArray:Array<Book> = [];
         if(studentList[i].id == bookList[j].studentId){
           tempArray.push(bookList[j])
         }

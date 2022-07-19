@@ -16,6 +16,8 @@ import { ViewChieldComponent } from './view-chield/view-chield.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { ProductComponent } from './product/product.component';
 import { StudentBookProblemComponent } from './student-book-problem/student-book-problem.component';
+import { UniqeArrayProblemComponent } from './uniqe-array-problem/uniqe-array-problem.component';
+import { PermutationComponent } from './permutation/permutation.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { StudentBookProblemComponent } from './student-book-problem/student-book
     ViewChieldComponent,
     NgContentComponent,
     ProductComponent,
-    StudentBookProblemComponent
+    StudentBookProblemComponent,
+    UniqeArrayProblemComponent,
+    PermutationComponent
   ],
   imports: [
     BrowserModule,
